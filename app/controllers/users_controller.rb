@@ -1,13 +1,20 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
 
   def show
     @user = User.find_by_id(params[:id])
-    # @tasks = @user.tasks
+    @tasks = @user.tasks
+  end
+
+  def edit
+    @user = User.find_by_id(params[:id])
   end
 
 
-
+  def update
+    @user = User.find_by_id(params[:id])
+    @user.update(user_params)
+    redirect_to @user
+  end
 
 
 
@@ -21,5 +28,10 @@ class UsersController < ApplicationController
 
 
 
-  
+  private
+
+    def user_params
+      params.require(:user).permit(:age, :weight, :height, :name, :bio)
+    end
+
 end

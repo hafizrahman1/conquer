@@ -1,0 +1,25 @@
+<%= form_for user do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %><br><br>
+
+  <%= f.label :weight %>
+  <%= f.text_field :weight %><br><br>
+
+  <%= f.label :height %>
+  <%= f.text_field :height %><br><br>
+
+  <%= f.label :gender %>
+  <%= f.text_field :gender %><br><br>
+
+
+  <%= f.label :bio %>
+  <%= f.text_field :bio %><br><br>
+
+
+  <%= f.submit "Edit Profile" %>
+
+  <% end %>

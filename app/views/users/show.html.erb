@@ -1,11 +1,10 @@
 <h1>Welcome <%=@user.name%></h1>
 
-<%= if 
-
-<%= @tasks.each do |task| %>
+<%= @user.tasks.each do |task| %>
   <p>
-  <%  task.jobs.each do |job| %>
-      <%= job %>
-    <% end %>
+    task.description
   </p>
 <% end %>
+
+
+<%= link_to "Edit Profile", edit_user_path(@user) %>
