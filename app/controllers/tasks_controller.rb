@@ -17,7 +17,13 @@ class TasksController < ApplicationController
   end
 
   def create
-    binding.pry
+    @task = Task.new(task_params)
+    if @task.save
+      redirect_to task_path(@task)
+    else
+      # flash[:message] = "Error please try again"
+      render :new
+    end
   end
 
 
@@ -27,7 +33,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(jobs_attributes: [:description])
+    params.require(:task).permit(:name, :fear_id, jobs_attributes: [:description])
   end
 
 end
