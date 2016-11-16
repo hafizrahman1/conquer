@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   root :to =>'welcome#index'
+
+  # root :to =>'users#show'
+
   resources :fears
   resources :tasks
 
   get "/users/sign_out" => "sessions#destroy"
+  # get "/users/sign_out" => "sessions#destroy"
+
   devise_for :users
+  get '/users/:id', to: "users#show", as: "user"
 
 
 
