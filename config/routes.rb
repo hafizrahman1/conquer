@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   resources :fears
   resources :tasks
 
+  
   get "/users/sign_out" => "sessions#destroy"
   devise_for :users
 
+  get "/users/addtask/:id" => "users#addtask"
 
 
 
