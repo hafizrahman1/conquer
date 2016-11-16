@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
 
   def show
     @user = User.find_by_id(params[:id])
-    # @tasks = @user.tasks
+    @tasks = @user.tasks
   end
 
 
@@ -21,5 +20,5 @@ class UsersController < ApplicationController
 
 
 
-  
+
 end
