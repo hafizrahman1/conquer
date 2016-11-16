@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :fears
   resources :tasks
 
-  
+
   get "/users/sign_out" => "sessions#destroy"
   # get "/users/sign_out" => "sessions#destroy"
 
