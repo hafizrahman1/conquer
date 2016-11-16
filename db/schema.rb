@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116040844) do
+ActiveRecord::Schema.define(version: 20161116162821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,17 +19,17 @@ ActiveRecord::Schema.define(version: 20161116040844) do
   create_table "fears", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "resources",   default: [],              array: true
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "resources"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "fear_id"
-    t.text     "jobs",       default: [],              array: true
+    t.text     "description"
     t.integer  "deadline"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "user_fears", force: :cascade do |t|
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 20161116040844) do
     t.string   "bio"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :tasks
 
   get "/users/sign_out" => "sessions#destroy"
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
 
