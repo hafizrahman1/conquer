@@ -10,10 +10,8 @@ class TasksController < ApplicationController
 
 
   def create
-    @task = Task.find_by_id(params[:id])
-    @task.new(fear_params)
-    # if fear.save
-    #
+    binding.pry
+    # @task = Task.create(task_params)
   end
 
 
