@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
   get "/users/addtask/:id" => "users#addtask"
 
+
   resources :users
+
+  get "/tasks/new/:id" => "tasks#new"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

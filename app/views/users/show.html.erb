@@ -10,3 +10,13 @@
 <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
 
 <%= link_to "Conquer New Fear", fears_path %>
+
+<% if @tasks!=nil %>
+  <% @tasks.each do |task| %>
+    <p>
+    <%  task.jobs.each do |job| %>
+        <%= job %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>

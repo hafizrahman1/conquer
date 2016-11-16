@@ -34,4 +34,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:age, :weight, :height, :name, :bio)
     end
 
+
 end

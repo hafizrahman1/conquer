@@ -1,0 +1,7 @@
+<%= form_for @task do |f| %>
+ <%= f.text_field :jobs, multiple: true%><br>
+ <%= f.text_field :jobs, multiple: true%><br>
+ <%= f.text_field :jobs, multiple: true%><br>
+ <%= f.hidden_field :fear, value: @fear %>
+ <%= f.submit %>
+<% end %>
