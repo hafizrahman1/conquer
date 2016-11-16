@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :tasks
 
 
-  get "/users/sign_out" => "sessions#destroy"
+  # get "/users/sign_out" => "sessions#destroy"
   # get "/users/sign_out" => "sessions#destroy"
 
   devise_for :users

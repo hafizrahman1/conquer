@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20161116040844) do
   create_table "user_tasks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "task_id"
+    t.boolean "status"
   end
 
   create_table "users", force: :cascade do |t|
