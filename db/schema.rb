@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20161116040860) do
   create_table "fears", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "resources",   default: [],              array: true
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "resources"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(version: 20161116040860) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "fear_id"
+    t.text     "description"
     t.integer  "deadline"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "user_fears", force: :cascade do |t|
@@ -53,7 +54,6 @@ ActiveRecord::Schema.define(version: 20161116040860) do
   create_table "user_tasks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "task_id"
-    t.boolean "status"
   end
 
   create_table "users", force: :cascade do |t|
