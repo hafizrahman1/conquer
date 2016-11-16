@@ -1,0 +1,6 @@
+<%=@fear.name %>
+<%@fear.tasks.each do |task| %>
+  <%= link_to task.name, task_path(task) %>
+<% end %>
+
+<a href="/tasks/new/<%=@fear.id%>">Create a New Plan</a>

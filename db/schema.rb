@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(version: 20161116162821) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.text     "description"
+    t.boolean  "completed"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "task_jobs", force: :cascade do |t|
+    t.integer  "task_id"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.integer  "fear_id"
     t.text     "description"
@@ -40,6 +54,7 @@ ActiveRecord::Schema.define(version: 20161116162821) do
   create_table "user_tasks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "task_id"
+    t.boolean "status"
   end
 
   create_table "users", force: :cascade do |t|

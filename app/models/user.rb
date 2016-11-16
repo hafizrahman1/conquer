@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-  has_many :user_phobias
-  has_many :phobias, through: :user_phobias
+  has_many :user_fears
+  has_many :fears, through: :user_fears
   has_many :user_tasks
   has_many :tasks, through: :user_tasks
 
