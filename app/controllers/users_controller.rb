@@ -12,13 +12,11 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
   end
 
-
   def update
     @user = User.find_by_id(params[:id])
     @user.update(user_params)
     redirect_to @user
   end
-
 
 
   def addTask
@@ -36,6 +34,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:age, :weight, :height, :name, :bio)
     end
-
 
 end

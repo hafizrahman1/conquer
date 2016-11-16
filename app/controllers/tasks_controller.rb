@@ -9,16 +9,11 @@ class TasksController < ApplicationController
     @task = Task.find_by_id(params[:id])
   end
 
+  def update
+  end
 
   def create
 
-    @task = Task.new(task_params)
-    binding.pry
-
-  end
-
-
-  def update
   end
 
 
