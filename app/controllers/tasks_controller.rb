@@ -2,6 +2,10 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    @task.jobs.build
+    @task.jobs.build
+    @task.jobs.build
+
     @fear = Fear.find_by_id(params[:id])
   end
 
@@ -13,7 +17,7 @@ class TasksController < ApplicationController
   end
 
   def create
-
+    binding.pry
   end
 
 
@@ -23,7 +27,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:jobs => [])
+    params.require(:task).permit(jobs_attributes: [:description])
   end
 
 end
