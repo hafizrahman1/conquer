@@ -1,7 +1,11 @@
 <%= form_for @task do |f| %>
- <%= f.text_field :jobs, multiple: true%><br>
- <%= f.text_field :jobs, multiple: true%><br>
- <%= f.text_field :jobs, multiple: true%><br>
- <%= f.hidden_field :fear, value: @fear %>
- <%= f.submit %>
-<% end %>
+
+  Create Jobs:
+  <br>
+  <%= f.fields_for :jobs, Job.new do |j| %>
+    <%= j.text_field :description %><br>
+  <%end%>
+
+  <%= f.hidden_field :fear_id, value: @fear.id %>
+<%= f.submit "Create Plan" %>
+<%end%>
