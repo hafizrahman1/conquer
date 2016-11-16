@@ -1,8 +1,10 @@
 <%= form_for @task do |f| %>
-
+  Title Your Plan:
+  <%= f.text_field :name%>
+  <br>
   Create Jobs:
   <br>
-  <%= f.fields_for :jobs, Job.new do |j| %>
+  <%= f.fields_for :jobs do |j| %>
     <%= j.text_field :description %><br>
   <%end%>
 

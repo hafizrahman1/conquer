@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116040870) do
-
+ActiveRecord::Schema.define(version: 20161116162821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +19,9 @@ ActiveRecord::Schema.define(version: 20161116040870) do
   create_table "fears", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "resources"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "resources",   default: [],              array: true
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -41,16 +40,10 @@ ActiveRecord::Schema.define(version: 20161116040870) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "fear_id"
-    t.text     "description"
     t.integer  "deadline"
-<<<<<<< HEAD
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
-=======
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
->>>>>>> 0dd726409d353282216b005c805479a3daff0b34
   end
 
   create_table "user_fears", force: :cascade do |t|
@@ -59,15 +52,10 @@ ActiveRecord::Schema.define(version: 20161116040870) do
   end
 
   create_table "user_tasks", force: :cascade do |t|
-<<<<<<< HEAD
     t.integer  "user_id"
     t.integer  "task_id"
     t.boolean  "status"
     t.datetime "user_deadline"
-=======
-    t.integer "user_id"
-    t.integer "task_id"
->>>>>>> 0dd726409d353282216b005c805479a3daff0b34
   end
 
   create_table "users", force: :cascade do |t|
