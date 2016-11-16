@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :tasks
 
 
+
   # get "/users/sign_out" => "sessions#destroy"
   # get "/users/sign_out" => "sessions#destroy"
 
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
 
   get "/users/addtask/:id" => "users#addtask"
 
-  resources :users 
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
