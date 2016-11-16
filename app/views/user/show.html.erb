@@ -1,0 +1,7 @@
+<h1>Welcome <%=@user.name%></h1>
+
+<%= @user.tasks.each do |task| %>
+  <p>
+    task.description
+  </p>
+<% end %>
