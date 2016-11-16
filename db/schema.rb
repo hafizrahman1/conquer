@@ -19,17 +19,17 @@ ActiveRecord::Schema.define(version: 20161116040844) do
   create_table "fears", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "resources"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "resources",   default: [],              array: true
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "fear_id"
-    t.text     "description"
+    t.text     "jobs",       default: [],              array: true
     t.integer  "deadline"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "user_fears", force: :cascade do |t|
