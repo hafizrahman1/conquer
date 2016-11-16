@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: "users#show", as: "user"
 
   get "/users/addtask/:id" => "users#addtask"
-
+  get "/tasks/new/:id" => "tasks#new"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
