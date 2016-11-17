@@ -1,25 +1,27 @@
 <h1>Welcome <%=@user.name%></h1>
 
-<% if @user.plans.length != 0 %>
-  <%= @user.plans.each do |plan| %>
-     <p>
-      <%= plan.description %>
-    </p>
-  <% end %><br><br>
-<%end%>
+<div class="user_plans">
+  <% if @user.plans.length != 0 %>
+<% @user.plans.each do |plan| %>
 
+  <%= form_for x %>
+
+
+    <form action="/user_plans/<%=x.id%>" method="patch">
+      <input name="_method" value="update">
+      <h3><%=plan.fear.name%></h3>
+      <h4>Tasks:</h4>
+      <% plan.jobs.each do |job| %>
+        <input type="checkbox" name="description"/>
+        <label><p><%=job.description%></p></label>
+      <%end%>
+      <input type="submit" name="submit">
+    </form><br>
+
+    <%end%>
+  <%end%>
+</div>
 
 <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
 
 <%= link_to "Conquer New Fear", fears_path %>
-
-<% if @plans!=nil %>
-  <% @plans.each do |plan| %>
-
-    <p>
-    <%  plan.jobs.each do |job| %>
-        <%= job.description %>
-      <% end %>
-    </p>
-  <% end %>
-<% end %>

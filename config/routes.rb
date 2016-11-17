@@ -6,11 +6,14 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+
   get '/users/:id', to: "users#show", as: "user"
 
-  get "/users/addplan/:id" => "users#addplan"
+  get "/users/addplan/:id" => "users#addPlan"
 
   resources :users
+
+  resources :user_plans
 
   get "/plans/new/:id" => "plans#new"
 

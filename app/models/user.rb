@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :fears, through: :user_fears
   has_many :user_plans
   has_many :plans, through: :user_plans
+  has_many :user_jobs
+  has_many :jobs, through: :user_jobs
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

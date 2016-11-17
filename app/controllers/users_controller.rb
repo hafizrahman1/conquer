@@ -19,15 +19,14 @@ class UsersController < ApplicationController
   end
 
 
-  def addTask
+  def addPlan
     @user = current_user
-    @plan = find_by_id(params[:id])
+    @plan = Plan.find_by_id(params[:id])
     @user.plans << @plan
     flash[:message] = "You have succesfully added a new plan!"
     redirect_to user_path(@user)
   end
-
-
+  
 
   private
 
