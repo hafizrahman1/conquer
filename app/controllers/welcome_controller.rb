@@ -5,5 +5,5 @@ class WelcomeController < ApplicationController
 
 
 
-  
+
 end

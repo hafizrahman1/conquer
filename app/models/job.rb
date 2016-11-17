@@ -1,4 +1,4 @@
 class Job < ActiveRecord::Base
-  has_many :task_jobs
-  has_many :tasks, through: :task_jobs
+  has_many :plan_jobs
+  has_many :plans, through: :plan_jobs
 end

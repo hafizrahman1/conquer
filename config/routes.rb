@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root :to =>'welcome#index'
 
   resources :fears
-  resources :tasks
+  resources :plans
 
   get "/users/sign_out" => "sessions#destroy"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -13,11 +13,11 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: "users#show", as: "user"
 
-  get "/users/addtask/:id" => "users#addtask"
+  get "/users/addplan/:id" => "users#addplan"
 
 
   resources :users
 
-  get "/tasks/new/:id" => "tasks#new"
+  get "/plans/new/:id" => "plans#new"
 
 end

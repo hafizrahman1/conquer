@@ -26,19 +26,19 @@ ActiveRecord::Schema.define(version: 20161116162821) do
 
   create_table "jobs", force: :cascade do |t|
     t.text     "description"
-    t.boolean  "completed"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "completed",   default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
-  create_table "task_jobs", force: :cascade do |t|
-    t.integer  "task_id"
+  create_table "plan_jobs", force: :cascade do |t|
+    t.integer  "plan_id"
     t.integer  "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tasks", force: :cascade do |t|
+  create_table "plans", force: :cascade do |t|
     t.integer  "fear_id"
     t.integer  "deadline"
     t.datetime "created_at", null: false
@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(version: 20161116162821) do
     t.integer "fear_id"
   end
 
-  create_table "user_tasks", force: :cascade do |t|
+  create_table "user_plans", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "task_id"
+    t.integer  "plan_id"
     t.boolean  "status"
     t.datetime "user_deadline"
   end

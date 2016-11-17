@@ -1,6 +1,6 @@
-class CreateTasks < ActiveRecord::Migration
+class CreatePlans < ActiveRecord::Migration
   def change
-    create_table :tasks do |t|
+    create_table :plans do |t|
       t.integer :fear_id
       t.integer :deadline
 

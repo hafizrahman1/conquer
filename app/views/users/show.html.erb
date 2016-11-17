@@ -1,8 +1,8 @@
 <h1>Welcome <%=@user.name%></h1>
 
-<%= @user.tasks.each do |task| %>
+<%= @user.plans.each do |plan| %>
   <p>
-    task.description
+    plan.description
   </p>
 <% end %><br><br>
 
@@ -11,10 +11,10 @@
 
 <%= link_to "Conquer New Fear", fears_path %>
 
-<% if @tasks!=nil %>
-  <% @tasks.each do |task| %>
+<% if @plans!=nil %>
+  <% @plans.each do |plan| %>
     <p>
-    <%  task.jobs.each do |job| %>
+    <%  plan.jobs.each do |job| %>
         <%= job %>
       <% end %>
     </p>
