@@ -1,17 +1,24 @@
 <h1>Welcome <%=@user.name%></h1>
 
+<% if @user.plans.length != 0 %>
+  <%= @user.plans.each do |plan| %>
+     <p>
+      <%= plan.description %>
+    </p>
+  <% end %><br><br>
+<%end%>
 
 
 <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
 
 <%= link_to "Conquer New Fear", fears_path %>
 
-<% if @tasks!=nil || !@tasks.empty?%>
+<% if @plans!=nil %>
+  <% @plans.each do |plan| %>
 
-  <% @tasks.each do |task| %>
     <p>
-    <%  task.jobs.each do |job| %>
-        <%= job %>
+    <%  plan.jobs.each do |job| %>
+        <%= job.description %>
       <% end %>
     </p>
   <% end %>
