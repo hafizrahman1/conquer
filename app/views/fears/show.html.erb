@@ -1,7 +1,8 @@
 <%=@fear.name %><br><br>
-<%@fear.tasks.each do |task| %>
+<%=@fear.description %><br><br>
 
-  <%= link_to task.name, task_path(task) %>
+<%@fear.tasks.each do |task| %>
+  <%= task.description %><br><br>
 
 <% end %>
 
