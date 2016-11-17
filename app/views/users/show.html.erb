@@ -1,10 +1,12 @@
 <h1>Welcome <%=@user.name%></h1>
 
-<%= @user.plans.each do |plan| %>
-  <p>
-    plan.description
-  </p>
-<% end %><br><br>
+<% if @user.plans.length != 0 %>
+  <%= @user.plans.each do |plan| %>
+     <p>
+      <%= plan.description %>
+    </p>
+  <% end %><br><br>
+<%end%>
 
 
 <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
@@ -13,9 +15,10 @@
 
 <% if @plans!=nil %>
   <% @plans.each do |plan| %>
+
     <p>
     <%  plan.jobs.each do |job| %>
-        <%= job %>
+        <%= job.description %>
       <% end %>
     </p>
   <% end %>

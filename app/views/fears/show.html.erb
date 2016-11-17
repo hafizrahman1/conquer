@@ -1,7 +1,10 @@
 <%=@fear.name %><br><br>
+
 <%@fear.plans.each do |plan| %>
 
   <%= link_to plan.name, plan_path(plan) %>
+
+<%=@fear.description %><br><br>
 
 <% end %>
 
