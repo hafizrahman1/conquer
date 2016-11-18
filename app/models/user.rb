@@ -19,15 +19,26 @@ class User < ActiveRecord::Base
     end
   end
 
+  def plan_complete(plan)
+    userPlan = UserPlan.find_by(user_id: self, plan_id: plan.id)
+    userPlan.status = true
+    userPlan.save
+  end
+
   def jobs_by_plan(plan)
     ary = []
     plan.jobs.each do |job|
-      @connection = UserJob.find_by(user_id: self, job_id: job.id)
-      if !@connection.completed
+      connection = UserJob.find_by(user_id: self, job_id: job.id)
+      if !connection.completed
         ary << job
       end
     end
-    ary
+    if !ary.empty?
+      return ary
+    else
+      plan_complete(plan)
+      return []
+    end
   end
 
   def jobs_completion(job)
@@ -37,8 +48,16 @@ class User < ActiveRecord::Base
   end
 
   def completed_plans
-    UserPlan.where(user_id: self.id, status: true)
+    UserPlan.where(user_id: self.id, status: true).collect do |user_plan|
+      Plan.find_by_id(user_plan.plan_id)
+    end
   end
-  
+
+  def incompleted_plans
+    UserPlan.where(user_id: self.id, status: false).collect do |user_plan|
+      Plan.find_by_id(user_plan.plan_id)
+    end
+  end
+
 
 end

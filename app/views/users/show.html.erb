@@ -3,8 +3,11 @@
 <div class="completed_user_plans">
   <% if @user.plans.length != 0 %>
     <h2>Completed Plans</h2>
-    <%@user.completed_plans.each do |plan|%>
-      <%= plan.name %>
+    <%if @completed_plans.length == 0 %>
+    <%= "No plans completed yet" %>
+    <%end%>
+    <%@completed_plans.each do |plan|%>
+      <li><%= plan.name %></li>
     <%end%>
   <%end%>
 </div>
@@ -12,7 +15,8 @@
 <div class="user_plans">
   <% if @user.plans.length != 0 %>
     <h2>Current Plans</h2>
-    <% @user.plans.each do |plan| %>
+    <% @incompleted_plans.each do |plan| %>
+    <%binding.pry%>
       <h2><%=plan.fear.name%></h2>
       <h3><%=plan.name%></h3>
       <h4>Tasks:</h4>

@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
-  def show
-    @user = User.find_by_id(params[:id])
-  end
 
   def show
     @user = User.find_by_id(params[:id])
+    @completed_plans = @user.completed_plans
+    @incompleted_plans = @user.incompleted_plans
     @plans = @user.plans
   end
 

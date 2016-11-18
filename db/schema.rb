@@ -54,13 +54,13 @@ ActiveRecord::Schema.define(version: 20161117214937) do
   create_table "user_jobs", force: :cascade do |t|
     t.integer "user_id"
     t.integer "job_id"
-    t.boolean "completed"
+    t.boolean "completed", default: false
   end
 
   create_table "user_plans", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "plan_id"
-    t.boolean  "status"
+    t.boolean  "status",        default: false
     t.datetime "user_deadline"
   end
 
