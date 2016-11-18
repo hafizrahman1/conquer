@@ -3,4 +3,16 @@
   <%=job.description%>
 <%end%>
 
+
+<br><br>
+Plan's Average Rating<br>
+<%= @average_rating %>
+
+
+<br><br>
+Plans Comments:
+  <% @plans_comments.each do |comment| %>
+    <li><%= comment %></li>
+  <% end %>
+
 <a href="/users/addplan/<%=@plan.id%>"><br>Select This Plan</a>

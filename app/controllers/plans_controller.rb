@@ -11,9 +11,15 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find_by_id(params[:id])
+    @average_rating = @plan.average_rating
+    @plans_ratings = @plan.ratings
+    @plans_comments = @plan.plans_comments
   end
 
   def update
+    @plan = Plan.find_by_id(params[:id])
+    @plan.update(plan_params)
+
   end
 
   def create
