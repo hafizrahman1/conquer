@@ -1,9 +1,8 @@
-<h2>Completed Plans:</h2>
-<% @completed_plans.each.with_index(1) do |plan, i| %>
-  <p><%= "#{i}. " %><%= link_to "#{plan.name}", plan_path(plan) %></p>
-<% end %>
-
-<h2>All other plans</h2>
-<% @incompleted_plans.each.with_index(1) do |plan, i| %>
-  <p><%= "#{i}. " %><%=link_to "#{plan.name}", plan_path(plan) %></p>
+<% @fears.each.with_index(1) do |fear, i| %>
+  <h2><%= "#{i}. " %><%= link_to "#{fear.name}", fear_path(fear) %></h2>
+  <ol>
+  <% fear.plans.each do |plan| %>
+    <li><%=link_to "#{plan.name}", plan_path(plan) %> <%= plan.ratings unless plan.ratings.empty?%></li>
+  <% end %>
+  </ol>
 <% end %>

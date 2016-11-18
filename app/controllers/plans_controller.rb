@@ -17,8 +17,7 @@ class PlansController < ApplicationController
   end
 
   def index
-    @completed_plans = current_user.completed_plans
-    @incompleted_plans = current_user.incompleted_plans
+    @fears = Fear.all
   end
 
   def update
