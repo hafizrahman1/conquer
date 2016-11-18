@@ -32,7 +32,7 @@ class PlansController < ApplicationController
 
   def forums
     # get the completed plans
-    @plans = 
+    binding.pry 
   end
 
   private
