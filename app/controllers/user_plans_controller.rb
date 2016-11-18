@@ -1,10 +1,9 @@
 class UserPlansController < ApplicationController
   def update
-    binding.pry
   end
 
   def show
-    binding.pry
-  end 
+    @user_plan = UserPlan.find_by(id: params[:id].to_i)
+  end
 
 end

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :user_plans
   resources :user_jobs
 
+  resources :user_plans
+  
   get "/plans/new/:id" => "plans#new"
 
 end
