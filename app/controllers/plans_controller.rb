@@ -13,6 +13,11 @@ class PlansController < ApplicationController
     @plan = Plan.find_by_id(params[:id])
   end
 
+  def index
+    @completed_plans = current_user.completed_plans
+    @incompleted_plans = current_user.incompleted_plans
+  end
+
   def update
   end
 

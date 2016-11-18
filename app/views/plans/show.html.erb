@@ -1,6 +1,6 @@
-
+<h2><%= @plan.name %></h2>
 <%@plan.jobs.each do |job|%>
-  <%=job.description%>
+  <p><%=job.description%></p>
 <%end%>
 
 <a href="/users/addplan/<%=@plan.id%>"><br>Select This Plan</a>

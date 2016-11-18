@@ -6,6 +6,8 @@
           <li><%= link_to "Conquer Home", root_path %></li>
               <% if current_user %>
               <li><%= link_to "Conquer Profile", user_path(current_user) %></li>
+              <li><%= link_to "Forum", plans_path %></li>
+              <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
               <% end %>
           <% else %>
 
