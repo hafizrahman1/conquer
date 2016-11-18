@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "/users/addplan/:id" => "users#addplan"
 
+  get "forums", to: "plans#forums"
+
   resources :users
 
   get "/plans/new/:id" => "plans#new"

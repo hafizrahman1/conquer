@@ -30,6 +30,11 @@ class PlansController < ApplicationController
   def destroy
   end
 
+  def forums
+    # get the completed plans
+    @plans = 
+  end
+
   private
 
   def plan_params
