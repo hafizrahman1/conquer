@@ -1,25 +1,35 @@
 <h1>Welcome <%=@user.name%></h1>
 
-<% if @user.plans.length != 0 %>
-  <%= @user.plans.each do |plan| %>
-     <p>
-      <%= plan.description %>
-    </p>
-  <% end %><br><br>
+<div class="completed_user_plans">
+  <% if @user.plans.length != 0 %>
+    <h2>Completed Plans</h2>
+    <%if @completed_plans.length == 0 %>
+    <%= "No plans completed yet" %>
+    <%end%>
+    <%@completed_plans.each do |plan|%>
+      <li><%= plan.name %></li>
+    <%end%>
+  <%end%>
+</div>
+
+<div class="user_plans">
+  <% if @user.plans.length != 0 %>
+    <h2>Current Plans</h2>
+    <% @incompleted_plans.each do |plan| %>
+      <h2><%=plan.fear.name%></h2>
+      <h3><%=plan.name%></h3>
+      <h4>Tasks:</h4>
+      <%@user.jobs_by_plan(plan).each do |job|%>
+        <%= form_for @user, method: :PUT do |f| %>
+        <p><%=job.description%></p>
+        <%= f.hidden_field :job, value: job.id %>
+        <%= f.submit "Completed" %>
+      <%end%>
+    <%end%>
+  <%end%>
 <%end%>
-
-
+</div>
+<br>
 <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
 
 <%= link_to "Conquer New Fear", fears_path %>
-
-<% if @plans!=nil %>
-  <% @plans.each do |plan| %>
-
-    <p>
-    <%  plan.jobs.each do |job| %>
-        <%= job.description %>
-      <% end %>
-    </p>
-  <% end %>
-<% end %>
