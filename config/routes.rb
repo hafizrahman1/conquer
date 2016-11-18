@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :fears
   resources :plans
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
 
   get "/users/addplan/:id" => "users#addPlan"
 

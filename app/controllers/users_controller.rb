@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
 
 
+
   def addPlan
     @user = current_user
     @plan = Plan.find_by_id(params[:id])
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:age, :weight, :height, :name, :bio, :job_ids)
+      params.require(:user).permit(:age, :weight, :height, :name, :bio, :job_ids, :gender)
     end
 
 end
