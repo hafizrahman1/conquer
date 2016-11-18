@@ -1,2 +1,23 @@
-YOU DID IT!!!!
-<h2><%= @user_plan.status %> </h2>
+
+ <h2><%= @plan.name %></h2>
+  <%@plan.jobs.each do |job|%>
+    <h4><%=job.description%></h4><br>
+  <%end%>
+
+<% if @user_plan.status == true %>
+  <%= form_for @user_plan do |f| %>
+  Share your feedback about this plan:
+  <%= f.text_field :comment %>
+  <%= f.label "1" %>
+  <%= f.radio_button(:rating, "1") %>
+  <%= f.label "2" %>
+  <%= f.radio_button(:rating, "2") %>
+  <%= f.label "3" %>
+  <%= f.radio_button(:rating, "3") %>
+  <%= f.label "4" %>
+  <%= f.radio_button(:rating, "4") %>
+  <%= f.label "5" %>
+  <%= f.radio_button(:rating, "5") %>
+  <%= f.submit %>
+  <%end%>
+<%end %>
