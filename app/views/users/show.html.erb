@@ -1,27 +1,32 @@
 <h1>Welcome <%=@user.name%></h1>
 
-<div class="user_plans">
+<div class="completed_user_plans">
   <% if @user.plans.length != 0 %>
-<% @user.plans.each do |plan| %>
-
-  <%= form_for x %>
-
-
-    <form action="/user_plans/<%=x.id%>" method="patch">
-      <input name="_method" value="update">
-      <h3><%=plan.fear.name%></h3>
-      <h4>Tasks:</h4>
-      <% plan.jobs.each do |job| %>
-        <input type="checkbox" name="description"/>
-        <label><p><%=job.description%></p></label>
-      <%end%>
-      <input type="submit" name="submit">
-    </form><br>
-
+    <h2>Completed Plans</h2>
+    <%@user.completed_plans.each do |plan|%>
+      <%= plan.name %>
     <%end%>
   <%end%>
 </div>
 
+<div class="user_plans">
+  <% if @user.plans.length != 0 %>
+    <h2>Current Plans</h2>
+    <% @user.plans.each do |plan| %>
+      <h2><%=plan.fear.name%></h2>
+      <h3><%=plan.name%></h3>
+      <h4>Tasks:</h4>
+      <%@user.jobs_by_plan(plan).each do |job|%>
+        <%= form_for @user, method: :PUT do |f| %>
+        <p><%=job.description%></p>
+        <%= f.hidden_field :job, value: job.id %>
+        <%= f.submit "Completed" %>
+      <%end%>
+    <%end%>
+  <%end%>
+<%end%>
+</div>
+<br>
 <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
 
 <%= link_to "Conquer New Fear", fears_path %>
