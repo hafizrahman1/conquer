@@ -12,4 +12,8 @@ class Plan < ActiveRecord::Base
       self.jobs.build(job)
     end
   end
+
+  def find_user_plan(user)
+    UserPlan.where(user_id: user.id, plan_id: self.id)
+  end
 end
