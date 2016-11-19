@@ -1,0 +1,55 @@
+/*override stuff*/
+
+.epigenetics {
+  font-family: "Chathura";
+  font-size: 200%
+}
+
+
+.black {
+  background-color: aqua;
+  min-height: 100vh;
+}
+
+
+
+.dropdown {
+  font-family: "Chathura";
+  font-size: 300%;
+}
+
+
+a.dropdown-toggle {
+  font-family: "Chathura";
+  font-size: 100%;
+}
+
+
+ul.dropdown-menu {
+  font-family: "Chathura";
+  font-size: 50%;
+}
+
+
+.navbar-header {
+  font-family: "Chathura";
+  font-size: 150%;
+}
+
+
+input.form-control {
+  font-family: "Chathura";
+  font-size: 150%;
+}
+
+
+button.btn.btn-default {
+  font-family: "Chathura";
+  font-size: 100%;
+}
+
+
+a.navbar-brand {
+  font-family: "Chathura";
+  font-size: 200%;
+}

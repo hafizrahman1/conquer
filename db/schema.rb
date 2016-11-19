@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20161118170324) do
   create_table "user_plans", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "plan_id"
-    t.boolean  "status",        default: false
+    t.boolean  "status"
     t.datetime "user_deadline"
   end
 
