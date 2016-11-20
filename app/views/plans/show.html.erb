@@ -6,9 +6,12 @@
 <br>
 <br>
 
+<div class="jobs" >
 
-<%@plan.jobs.each do |job|%>
-  <%=job.description%>
-<%end%>
+    <%@plan.jobs.each do |job|%>
+      <%=job.description%><br><br>
+    <%end%>
 
-<a href="/users/addplan/<%=@plan.id%>"><br>Select This Plan</a>
+    <a href="/users/addplan/<%=@plan.id%>"><br>Select This Plan</a>
+
+</div>

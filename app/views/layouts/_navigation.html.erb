@@ -14,14 +14,18 @@
         <div class="navbar-collapse collapse" id="bs-navbar">
             <ul class="nav navbar-nav">
 
-                <li>
-                    <a class="page-scroll" href="/fears">The Code</a>
-                </li>
-                <li>
-                  <% if current_user %>
-                    <a class="page-scroll" href="/users/<%=current_user.id%>">Conquer Profile</a>
+                <li> <a class="page-scroll" href="/fears">Breaking The Code</a> </li>
+
+                  <% if !current_user.nil? %>
+                  <li><a class="page-scroll" href="/logout" method="delete">Sign Out</a></li>
+                  <li><a class="page-scroll" href="/users/<%=current_user.id%>">Conquer Profile</a></li>
+
+                    <% else %>
+                  <li><a class="page-scroll" href="/users/sign_in" method="delete">Sign In</a></li>
+                  <li><a class="page-scroll" href="/users/sign_up" method="delete">Sign Up</a></li>
+
                     <% end %>
-                </li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
