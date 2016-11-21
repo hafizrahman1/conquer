@@ -1,28 +1,34 @@
 
-
-
-
-
-
  <h2><%= @plan.name %></h2>
-  <%@plan.jobs.each do |job|%>
-    <h4><%=job.description%></h4><br>
-  <%end%>
+ <div class="w3-col l8 s12">
+   <div class="w3-card-4 w3-margin w3-white">
+     <div class="w3-container">
+        <%@plan.jobs.each do |job|%>
+          <h4><%=job.description%></h4><br>
+        <%end%>
+      </div>
+    </div>
+  </div>
 
-<% if @user_plan.status == true %>
-  <%= form_for @user_plan do |f| %>
-  Share your feedback about this plan:
-      <%= f.text_field :comment %>
-      <%= f.label "1" %>
-      <%= f.radio_button(:rating, "1") %>
-      <%= f.label "2" %>
-      <%= f.radio_button(:rating, "2") %>
-      <%= f.label "3" %>
-      <%= f.radio_button(:rating, "3") %>
-      <%= f.label "4" %>
-      <%= f.radio_button(:rating, "4") %>
-      <%= f.label "5" %>
-      <%= f.radio_button(:rating, "5") %>
-      <%= f.submit %>
-      <%end%>
-<%end %>
+  <div class="w3-col l4">
+    <div class="w3-card-2 w3-margin w3-margin-top">
+    <% if @user_plan.status == true %>
+      <%= form_for @user_plan do |f| %>
+      Share your feedback about this plan:
+          <%= f.text_field :comment %>
+          <br>
+          <%= f.label "1" %>
+          <%= f.radio_button(:rating, "1") %>
+          <%= f.label "2" %>
+          <%= f.radio_button(:rating, "2") %>
+          <%= f.label "3" %>
+          <%= f.radio_button(:rating, "3") %>
+          <%= f.label "4" %>
+          <%= f.radio_button(:rating, "4") %>
+          <%= f.label "5" %>
+          <%= f.radio_button(:rating, "5") %>
+          <%= f.submit %>
+          <%end%>
+    <%end %>
+  </div>
+</div>
