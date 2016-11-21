@@ -16,6 +16,7 @@
   <% if @user.plans.length != 0 %>
     <h2>Current Plans</h2>
     <% @incompleted_plans.each do |plan| %>
+    
       <h2><%=plan.fear.name%></h2>
       <h3><%=plan.name%></h3>
       <h4>Tasks:</h4>
