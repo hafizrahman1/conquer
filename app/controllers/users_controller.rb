@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    # binding.pry
+
     @completed_plans = @user.completed_plans
     @incompleted_plans = @user.incompleted_plans
     @plans = @user.plans
@@ -22,6 +24,7 @@ class UsersController < ApplicationController
 
   def addPlan
     @user = current_user
+    # binding.pry
     @plan = Plan.find_by_id(params[:id])
     @user.plans << @plan
     @plan.jobs.each do |job|

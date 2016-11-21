@@ -1,21 +1,36 @@
-<div class=navbar>
-    <ul class="navbar">
-              <% if user_signed_in? %>
-            <li>Logged in as: <%= current_user.email %></li>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
-          <li><%= link_to "Conquer Home", root_path %></li>
-              <% if current_user %>
-              <li><%= link_to "Conquer Profile", user_path(current_user) %></li>
-              <% end %>
-          <% else %>
+<nav id="topNav" class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">
+                <span><i class="ion-ios-analytics-outline"></i> Conquerr</span>
+              </a>
+            </div>
+            <!-- <a class="navbar-brand page-scroll" href="/"></a> -->
+        </div>
 
-          <li><%= link_to "Sign In", new_user_session_path %></li>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <div class="navbar-collapse collapse" id="bs-navbar">
+            <ul class="nav navbar-nav navbar-right">
+                  <% if user_signed_in? %>
+              <li><a class="page-scroll" href="/logout" method="delete">Sign Out</a></li>
+              <li><%= link_to "Home", root_path %></li>
+                      <% if current_user %>
+                    <li><%= link_to "Forum", plans_path %></li>
+                    <li><%= link_to "Conquer Profile", user_path(current_user) %></li>
+                    <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+                      <% end %>
+              <% else %>
+              <li><a class="page-scroll" href="/users/sign_in" method="delete">Sign In</a></li>
+              <li><a class="page-scroll" href="/users/sign_up" method="delete">Sign Up</a></li>
 
-          <% end %>
-
-          <li><%= link_to 'Back', :back %></li>
-
-    </ul>
-
-</div>
+                  <% end %>
+            </ul>
+        </div>
+    </div>
+</nav>

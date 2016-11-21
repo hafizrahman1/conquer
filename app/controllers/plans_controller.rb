@@ -16,10 +16,13 @@ class PlansController < ApplicationController
     @plans_comments = @plan.plans_comments
   end
 
+  def index
+    @fears = Fear.all
+  end
+
   def update
     @plan = Plan.find_by_id(params[:id])
     @plan.update(plan_params)
-
   end
 
   def create

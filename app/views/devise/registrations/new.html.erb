@@ -1,60 +1,68 @@
-<h2 class="code"> Breaking The Code </h2>
+<%= render "layouts/welcome" %>
 
-<h2>Sign up</h2>
+<section class="bg-primary" id="one">
+  <div class="container">
+    <div class="row">
+      <div class="hero-text col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+        <h2>Sign Up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="field">
+            <%= f.label :name %><br />
+            <%= f.text_field :name %>
+          </div>
+
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :age %><br />
+            <%= f.text_field :age %>
+          </div>
+
+          <div class="field">
+            <%= f.label :weight %><br />
+            <%= f.text_field :weight %>
+          </div>
+
+          <div class="field">
+            <%= f.label :height %><br />
+            <%= f.text_field :height %>
+          </div>
+
+          <div class="field">
+            <%= f.label :gender %><br />
+            <%= f.select :gender, ['Male', 'Female'] %>
+          </div>
+
+          <div class="field">
+            <%= f.label :bio %><br />
+            <%= f.text_area :bio, size: "50x3" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Sign up" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.text_field :age %>
-  </div>
-
-  <div class="field">
-    <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
-  </div>
-
-  <div class="field">
-    <%= f.label :height %><br />
-    <%= f.text_field :height %>
-  </div>
-
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.select :gender, ['Male', 'Female'] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio, size: "50x3" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
