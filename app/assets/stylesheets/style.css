@@ -182,3 +182,57 @@ header .header-content .inner p {
 div.w3-container {
   text-align: center;
 }
+
+
+
+select#user_gender {
+    font-size: 15px;
+}
+
+input[type="submit"]  {
+    font-size: 15px;
+    color: black;
+    text-align: center;
+}
+
+
+em {
+  font-size: 13px;
+}
+
+
+
+div.links a {
+  /*color: #23527c;*/
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+form .field:not(:first-child) {
+  margin-top: 30px;
+  text-align: center;
+}
+
+textarea#user_bio {
+  text-align: center;
+}
+
+h3.sign_up {
+  font-size: 30px;
+  text-align: center;
+
+}
+
+div.sign_in {
+  text-align: center;
+  /*font-size: 30px;*/
+
+}
+
+div.centering_issue {
+  text-align: center;
+
+}
