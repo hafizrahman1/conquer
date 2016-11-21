@@ -234,5 +234,8 @@ div.sign_in {
 
 div.centering_issue {
   text-align: center;
+}
 
+div.edit_form {
+  text-align: center;
 }
