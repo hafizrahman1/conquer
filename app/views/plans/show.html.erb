@@ -1,17 +1,19 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 <div class="jobs" >
 
-    <%@plan.jobs.each do |job|%>
-      <%=job.description%><br><br>
-    <%end%>
+  <h2><%= @plan.name %></h2>
+  <%@plan.jobs.each do |job|%>
+    <p><%=job.description%></p>
+  <%end%>
+  <br><br>
+  Plan's Average Rating<br>
+  <%= @average_rating %>
 
-    <a href="/users/addplan/<%=@plan.id%>"><br>Select This Plan</a>
+</div>
 
+<div>
+  Plans Comments:
+  <% @plans_comments.each do |comment| %>
+    <li><%= comment %></li>
+  <% end %>
+  <a href="/users/addplan/<%=@plan.id%>"><br>Select This Plan</a>
 </div>

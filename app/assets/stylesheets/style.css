@@ -53,3 +53,152 @@ a.navbar-brand {
   font-family: "Chathura";
   font-size: 200%;
 }
+
+.container {
+  text-align: center;
+}
+
+/********************************************
+MAIN NAV
+********************************************/
+nav.navbar#topNav {
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+nav.navbar#topNav .navbar-brand span{
+  font-size: 40px;
+  position: relative;
+  top: -17;
+}
+
+nav.navbar#topNav .navbar-brand i{
+  position: relative;
+  top: 7;
+}
+
+/********************************************
+MAIN HEADER
+********************************************/
+header#first video {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.bg-primary {
+  width: 100%;
+  padding: 10% 0;
+  /*min-height: 100vh;*/
+}
+
+.bg-primary .hero-text{
+  width: 100%;
+  font-size: 20px;
+  margin-left: 0;
+  padding: 0;
+  /*border-left: 5px solid blue: */
+}
+
+
+/********************************************
+Form
+********************************************/
+
+input {
+  font-color: black;
+  /*background-color: gray;*/
+}
+
+#user_email{
+  color: black;
+}
+
+#user_name{
+  color: black;
+}
+
+#user_password{
+  color: black;
+}
+
+#user_password_confirmation{
+  color: black;
+}
+
+#user_age{
+  color: black;
+}
+
+#user_height{
+  color: black;
+}
+
+#user_weight{
+  color: black;
+}
+
+#user_gender{
+  color: black;
+}
+
+#user_bio{
+  color: black;
+}
+
+header .header-content .inner p {
+   margin-bottom: 50px;
+   font-size: 16px;
+   font-weight: 300;
+   color: rgba(255,255,255,0.7);
+}
+#video-background {
+ position: absolute;
+ right: 0;
+ bottom: 0;
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;
+ z-index: 1;
+}
+#video-background.collapsing {
+ display:none;
+}
+footer {
+   background-color:#2d2d2d ;
+}
+@media(min-width:768px) {
+   .icon-lg {
+       font-size: 80px;
+   }
+   header {
+       min-height: 100%;
+   }
+   header .header-content {
+       position: absolute;
+       top: 50%;
+       padding: 0 50px;
+       -webkit-transform: translateY(-50%);
+       -ms-transform: translateY(-50%);
+       transform: translateY(-50%);
+   }
+   header .header-content .inner {
+       margin-right: auto;
+       margin-left: auto;
+       max-width: 1000px;
+   }
+   header .header-content .inner h1 {
+       font-size: 53px;
+   }
+   header .header-content .inner p {
+       margin-right: auto;
+       margin-left: auto;
+       max-width: 80%;
+       font-size: 18px;
+   }
+   section {
+       min-height: 600px;
+       padding: 100px 0;
+   }
+}

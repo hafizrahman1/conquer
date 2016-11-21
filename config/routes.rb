@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root :to =>'welcome#index'
 
   resources :fears
@@ -11,14 +12,14 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
 
 
-
-
   get "/users/addplan/:id" => "users#addPlan"
 
   resources :users
 
   resources :user_plans
   resources :user_jobs
+
+  resources :user_plans
 
   get "/plans/new/:id" => "plans#new"
 
