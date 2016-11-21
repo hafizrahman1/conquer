@@ -107,6 +107,7 @@ Form
 
 input {
   font-color: black;
+
   /*background-color: gray;*/
 }
 
@@ -146,59 +147,36 @@ input {
   color: black;
 }
 
-header .header-content .inner p {
-   margin-bottom: 50px;
-   font-size: 16px;
-   font-weight: 300;
-   color: rgba(255,255,255,0.7);
+/*
+label {
+    font-size: 15px;
+}*/
+
+select#user_gender {
+    font-size: 15px;
 }
-#video-background {
- position: absolute;
- right: 0;
- bottom: 0;
- min-width: 100%;
- min-height: 100%;
- width: auto;
- height: auto;
- z-index: 1;
+
+input[type="submit"]  {
+    font-size: 15px;
+    color: black;
 }
-#video-background.collapsing {
- display:none;
+
+
+em {
+  font-size: 13px;
 }
-footer {
-   background-color:#2d2d2d ;
+
+
+
+div.links a {
+  /*color: #23527c;*/
+  color: black;
 }
-@media(min-width:768px) {
-   .icon-lg {
-       font-size: 80px;
-   }
-   header {
-       min-height: 100%;
-   }
-   header .header-content {
-       position: absolute;
-       top: 50%;
-       padding: 0 50px;
-       -webkit-transform: translateY(-50%);
-       -ms-transform: translateY(-50%);
-       transform: translateY(-50%);
-   }
-   header .header-content .inner {
-       margin-right: auto;
-       margin-left: auto;
-       max-width: 1000px;
-   }
-   header .header-content .inner h1 {
-       font-size: 53px;
-   }
-   header .header-content .inner p {
-       margin-right: auto;
-       margin-left: auto;
-       max-width: 80%;
-       font-size: 18px;
-   }
-   section {
-       min-height: 600px;
-       padding: 100px 0;
-   }
+
+a {
+  color: black;
+}
+
+form .field:not(:first-child) {
+  margin-top: 30px;
 }
