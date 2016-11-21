@@ -162,6 +162,16 @@ div {
     text-justify: inter-word;
 }
 
+div.row p{
+  background-color: black;
+  opacity: 0.7;
+  padding-top: 25px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-bottom: 25px;
+  width: 90%
+}
+
 header .header-content .inner p {
    margin-bottom: 50px;
    font-size: 16px;
