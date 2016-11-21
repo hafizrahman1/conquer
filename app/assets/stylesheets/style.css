@@ -64,18 +64,25 @@ MAIN NAV
 nav.navbar#topNav {
   margin-bottom: 0;
   z-index: 2;
+  box-sizing: border-box;
 }
 
-nav.navbar#topNav .navbar-brand span{
+nav.navbar#topNav .navbar-brand {
   font-size: 40px;
-  position: relative;
-  top: -17;
+  /*position: relative;
+  top: -17 !important;*/
 }
 
-nav.navbar#topNav .navbar-brand i{
+nav.navbar#topNav .navbar-brand.logo {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+
+/*nav.navbar#topNav .navbar-brand i{
   position: relative;
   top: 7;
-}
+}*/
 
 /********************************************
 MAIN HEADER
@@ -179,4 +186,12 @@ a {
 
 form .field:not(:first-child) {
   margin-top: 30px;
+}
+
+textarea#user_bio {
+  text-align: center;
+}
+
+h3.sign_up {
+  font-size: 30px;
 }
