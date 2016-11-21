@@ -14,7 +14,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Header -->
 <header class="w3-container w3-center w3-padding-32">
   <h1><b>Welcome <%=@user.name%></h1></b></h1>
-  <p>You <span class="w3-tag">will</span> conquer your fears </p>
+  <p>You <span class="w3-tag">will</span> conquer/p>
 </header>
 
 <!-- Grid -->
@@ -24,15 +24,24 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
-    <div class="w3-container w3-padding-8">
-      <h3><b>TITLE HEADING</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
-    </div>
-
     <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <% if @user.plans.length != 0 %>
+          <h2>Current Plans</h2>
+          <% @incompleted_plans.each do |plan| %>
+
+            <h2><%=plan.fear.name%></h2>
+            <h3><%=plan.name%></h3>
+            <h4>Tasks:</h4>
+            <%@user.jobs_by_plan(plan).each do |job|%>
+              <%= form_for @user, method: :PUT do |f| %>
+              <p><%=job.description%></p>
+              <%= f.hidden_field :job, value: job.id %>
+              <%= f.submit "Completed" %>
+            <%end%>
+          <%end%>
+        <%end%>
+      <%end%>
+
       <div class="w3-row">
         <div class="w3-col m8 s12">
           <p><button class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black"><b>READ MORE »</b></button></p>
@@ -45,7 +54,29 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <hr>
 
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container w3-padding-8">
+      <h3><b>BLOG ENTRY</b></h3>
+      <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
+    </div>
 
+    <div class="w3-container">
+      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
+        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black"><b>READ MORE »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
 
 <!-- Introduction menu -->
 <div class="w3-col l4">
@@ -58,13 +89,38 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
   </div><hr>
 
-  <hr>
+  <!-- Posts -->
   <div class="w3-card-2 w3-margin">
     <div class="w3-container w3-padding">
-      <h4>Fears</h4>
+      <h4>Completed Plans</h4>
+
+    <% if @user.plans.length != 0 %>
+      <%if @completed_plans.length == 0 %>
+      <%= "No plans completed yet" %>
+      <%end%>
+      <%@completed_plans.each do |plan|%>
+      <ul class="w3-ul w3-hoverable w3-white">
+        <li class="w3-padding-16">
+          <li><%= link_to plan.name, user_plan_path(plan.find_user_plan(@user)[0].id)%></li>
+      <%end%>
+    <%end%>
+
+</div>
+  </div>
+  <hr>
+
+  <!-- Labels / tags -->
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
     </div>
     <div class="w3-container w3-white">
-
+    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+    </p>
     </div>
   </div>
 
@@ -86,22 +142,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 
-  <% if @user.plans.length != 0 %>
-    <h2>Current Plans</h2>
-    <% @incompleted_plans.each do |plan| %>
-
-      <h2><%=plan.fear.name%></h2>
-      <h3><%=plan.name%></h3>
-      <h4>Tasks:</h4>
-      <%@user.jobs_by_plan(plan).each do |job|%>
-        <%= form_for @user, method: :PUT do |f| %>
-        <p><%=job.description%></p>
-        <%= f.hidden_field :job, value: job.id %>
-        <%= f.submit "Completed" %>
-      <%end%>
-    <%end%>
-  <%end%>
-<%end%>
 
 <br>
 
