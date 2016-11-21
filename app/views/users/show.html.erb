@@ -1,15 +1,6 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <h1>Welcome <%=@user.name%></h1>
 
-
-
-<div class="completed_user_plans">
   <% if @user.plans.length != 0 %>
     <h2>Completed Plans</h2>
     <%if @completed_plans.length == 0 %>
@@ -19,14 +10,11 @@
       <li><%= link_to plan.name, user_plan_path(plan.find_user_plan(@user)[0].id)%></li>
     <%end%>
   <%end%>
-</div>
-
-<div class="user_plans">
 
   <% if @user.plans.length != 0 %>
     <h2>Current Plans</h2>
     <% @incompleted_plans.each do |plan| %>
-    
+
       <h2><%=plan.fear.name%></h2>
       <h3><%=plan.name%></h3>
       <h4>Tasks:</h4>
@@ -39,7 +27,7 @@
     <%end%>
   <%end%>
 <%end%>
-</div>
+
 <br>
 
 <%= link_to "Conquer New Fear", fears_path %>
