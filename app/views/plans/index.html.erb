@@ -1,18 +1,12 @@
 
-
-
-<div class="container view-collections">
-
-
-    <% @fears.each.with_index(1) do |fear, i| %>
-      <h2><%= "#{i}. " %><%= link_to "#{fear.name}", fear_path(fear) %></h2>
-      <ol>
-      <% fear.plans.each do |plan| %>
-        <li><%=link_to "#{plan.name}", plan_path(plan) %> <%= plan.ratings unless plan.ratings.empty?%></li>
-      <% end %>
-      </ol>
-    <% end %>
-
-
-
-</div>
+<% @fears.each.with_index(1) do |fear, i| %>
+  <h2><%= "#{i}. " %><%= link_to "#{fear.name}", fear_path(fear) %></h2>
+  <ol>
+  <% fear.plans.each do |plan| %>
+    <li><%=link_to "#{plan.name}", plan_path(plan) %> -- Average rating: <strong><%= plan.average_rating %></strong></li>
+    <div id="comments">
+      <%# <%= button_to "Comments" %1> %>
+    </div>
+  <% end %>
+  </ol>
+<% end %>
