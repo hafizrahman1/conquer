@@ -85,6 +85,11 @@ a.navbar-brand {
   font-size: 200%;
 }
 
+.rating > span:hover:before {
+   content: "\2605";
+   position: absolute;
+}
+
 
 /********************************************
 MAIN NAV
