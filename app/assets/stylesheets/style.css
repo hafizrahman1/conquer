@@ -99,15 +99,21 @@ nav.navbar#topNav {
   z-index: 2;
 }
 
+Chathura {
+  font-style: "Chathura";
+}
+
 nav.navbar#topNav .navbar-brand span{
-  font-size: 40px;
+  font-style: "Chathura";
+  font-size: 45px;
   position: relative;
-  top: -17;
+  top: -20;
 }
 
 nav.navbar#topNav .navbar-brand i{
   position: relative;
-  top: 7;
+  top: 5;
+
 }
 
 /********************************************
