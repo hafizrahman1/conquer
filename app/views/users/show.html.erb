@@ -1,34 +1,75 @@
-<h1>Welcome <%=@user.name%></h1>
 
-<div class="completed_user_plans">
-  <% if @user.plans.length != 0 %>
-    <h2>Completed Plans</h2>
-    <%if @completed_plans.length == 0 %>
-    <%= "No plans completed yet" %>
-    <%end%>
-    <%@completed_plans.each do |plan|%>
-      <li><%= link_to plan.name, user_plan_path(plan.find_user_plan(@user)[0].id)%></li>
-    <%end%>
-  <%end%>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32">
+  <h1><b>Welcome <%=@user.name%></h1></b></h1>
+  <p>You <span class="w3-tag">will</span> conquer</p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h1>Current Plans</h1>
+        <% if @incompleted_plans.length != 0 %>
+          <% @incompleted_plans.each do |plan| %>
+              <h3><%=plan.fear.name%>:</h2>
+              <h3><%=plan.name%></h3>
+              <h4>Tasks:</h4>
+              <%@user.jobs_by_plan(plan).each do |job|%>
+                  <%= form_for @user, method: :PUT do |f| %>
+                  <p><%=job.description%></p>
+                  <%= f.hidden_field :job, value: job.id %>
+                  <%= f.submit "Completed" %>
+                  <%end%>
+              <%end%>
+          <%end%>
+        <%else%>
+          <h2>No Current Plans</h2>
+        <%end%>
+        <br>
+        <h4><%= link_to "Conquer New Fear", fears_path %></h4>
+      </div>
+    </div>
+  <hr>
 </div>
 
-<div class="user_plans">
-  <% if @user.plans.length != 0 %>
-    <h2>Current Plans</h2>
-    <% @incompleted_plans.each do |plan| %>
-      <h2><%=plan.fear.name%></h2>
-      <h3><%=plan.name%></h3>
-      <h4>Tasks:</h4>
-      <%@user.jobs_by_plan(plan).each do |job|%>
-        <%= form_for @user, method: :PUT do |f| %>
-        <p><%=job.description%></p>
-        <%= f.hidden_field :job, value: job.id %>
-        <%= f.submit "Completed" %>
+
+  <!-- Posts -->
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Completed Plans</h4>
+      <%if @completed_plans.length == 0 %>
+        <%= "No plans completed yet" %>
+      <%else%>
+        <%@completed_plans.each do |plan|%>
+        <ul class="w3-ul w3-hoverable w3-white">
+          <li><%= link_to plan.name, user_plan_path(plan.find_user_plan(@user)[0].id)%></li>
+        <%end%>
       <%end%>
-    <%end%>
-  <%end%>
-<%end%>
-</div>
-<br>
 
-<%= link_to "Conquer New Fear", fears_path %>
+</div>
+  </div>
+  <hr>
+
+
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>

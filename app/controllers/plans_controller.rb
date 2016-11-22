@@ -27,7 +27,6 @@ class PlansController < ApplicationController
   def update
     @plan = Plan.find_by_id(params[:id])
     @plan.update(plan_params)
-
   end
 
   def create

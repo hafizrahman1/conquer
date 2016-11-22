@@ -7,7 +7,7 @@
     <li><%=link_to "#{plan.name}", plan_path(plan) %> -- Average rating: <strong><%= plan.average_rating %></strong></li>
       <a href="#" class="load_comments" data-id="<%= plan.id %>">Load Comments</a>
       <div id="comment-<%= plan.id %>">
-        
+
       </div>
   <% end %>
   </ol>

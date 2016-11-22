@@ -1,11 +1,12 @@
 <%= form_for @plan do |f| %>
   Title Your Plan:
-  <%= f.text_field :name%>
+  <%= f.text_field :name%><br><br><br>
+
+  Create Tasks:<br>
   <br>
-  Create Jobs:
-  <br>
+  <% num = 0 %>
   <%= f.fields_for :jobs do |j| %>
-    <%= j.text_field :description %><br>
+    <%= j.text_area :description, :placeholder => "Description #{num += 1}"%><br><br>
   <%end%>
 
   <%= f.hidden_field :fear_id, value: @fear.id %>

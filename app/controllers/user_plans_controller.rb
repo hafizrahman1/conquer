@@ -4,6 +4,7 @@ class UserPlansController < ApplicationController
   end
 
   def update
+    
     @user_plan = UserPlan.find_by(id: params[:id])
     @user_plan.update(user_plan_params)
     redirect_to @user_plan

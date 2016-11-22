@@ -1,0 +1,254 @@
+/*override stuff*/
+
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+h3 {
+  padding-left: 20px;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.epigenetics {
+  font-family: "Chathura";
+  font-size: 200%
+}
+
+h2 {
+    text-align: center;
+}
+
+h4 {
+  text-align: justify;
+  padding-left: 20px;
+  padding-right :20px;
+}
+
+.black {
+  background-color: aqua;
+  min-height: 100vh;
+}
+
+
+.dropdown {
+  font-family: "Chathura";
+  font-size: 300%;
+}
+
+
+a.dropdown-toggle {
+  font-family: "Chathura";
+  font-size: 100%;
+}
+
+
+ul.dropdown-menu {
+  font-family: "Chathura";
+  font-size: 50%;
+}
+
+
+.navbar-header {
+  font-family: "Chathura";
+  font-size: 150%;
+}
+
+
+input.form-control {
+  font-family: "Chathura";
+  font-size: 150%;
+}
+
+
+button.btn.btn-default {
+  font-family: "Chathura";
+  font-size: 100%;
+}
+
+
+a.navbar-brand {
+  font-family: "Chathura";
+  font-size: 200%;
+}
+
+
+/********************************************
+MAIN NAV
+********************************************/
+nav.navbar#topNav {
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+nav.navbar#topNav .navbar-brand span{
+  font-size: 40px;
+  position: relative;
+  top: -17;
+}
+
+nav.navbar#topNav .navbar-brand i{
+  position: relative;
+  top: 7;
+}
+
+/********************************************
+MAIN HEADER
+********************************************/
+header#first video {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.bg-primary {
+  width: 100%;
+  padding: 10% 0;
+  /*min-height: 100vh;*/
+}
+
+
+/********************************************
+Form
+********************************************/
+
+input {
+  font-color: black;
+  /*background-color: gray;*/
+}
+
+#user_email{
+  color: black;
+}
+
+#user_name{
+  color: black;
+}
+
+#user_password{
+  color: black;
+}
+
+#user_password_confirmation{
+  color: black;
+}
+
+#user_age{
+  color: black;
+}
+
+#user_height{
+  color: black;
+}
+
+#user_weight{
+  color: black;
+}
+
+#user_gender{
+  color: black;
+}
+
+#user_bio{
+  color: black;
+}
+
+div.completed_user_plans a{
+  color: white;
+}
+
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+div.row p{
+  background-color: black;
+  opacity: 0.7;
+  padding-top: 25px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-bottom: 25px;
+  width: 90%
+}
+
+header .header-content .inner p {
+   margin-bottom: 50px;
+   font-size: 16px;
+   font-weight: 300;
+   color: rgba(255,255,255,0.7);
+}
+
+div.w3-container {
+  text-align: center;
+}
+
+
+
+select#user_gender {
+    font-size: 15px;
+}
+
+input[type="submit"]  {
+    font-size: 15px;
+    color: black;
+    text-align: center;
+}
+
+
+em {
+  font-size: 13px;
+}
+
+
+
+div.links a {
+  /*color: #23527c;*/
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+form .field:not(:first-child) {
+  margin-top: 30px;
+  text-align: center;
+}
+
+textarea#user_bio {
+  text-align: center;
+}
+
+h3.sign_up {
+  font-size: 30px;
+  text-align: center;
+
+}
+
+div.sign_in {
+  text-align: center;
+  /*font-size: 30px;*/
+
+}
+
+div.centering_issue {
+  text-align: center;
+}
+
+div.edit_form {
+  text-align: center;
+}
