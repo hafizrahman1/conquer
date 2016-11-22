@@ -1,14 +1,21 @@
-  <h3>Fears</h3>
-<% @fears.each.with_index(1) do |fear, i| %>
-  <h2><%= "#{i}. " %><%= link_to "#{fear.name}", fear_path(fear) %></h2>
-  <ol>
-  <% fear.plans.each do |plan| %>
-    <h4>Plans</h4>
-    <li><%=link_to "#{plan.name}", plan_path(plan) %> -- Average rating: <strong><%= plan.average_rating %></strong></li>
-      <a href="#" class="load_comments" data-id="<%= plan.id %>">Load Comments</a>
-      <div id="comment-<%= plan.id %>">
+<style media="screen">
+  h4{text-align: center;}
+  p{text-align: center;}
+</style>
 
-      </div>
-  <% end %>
-  </ol>
-<% end %>
+<div class="w3-card-4 w3-margin w3-white">
+  <div class="w3-container">
+    <h2><b>Fears</h2></b><br>
+    <% @fears.each.with_index(1) do |fear, i| %>
+      <h2><%= "#{i}. " %><%= link_to "#{fear.name}", fear_path(fear) %></h2><br>
+      <ol>
+        <% fear.plans.each do |plan| %>
+          <h4>Plans</h4>
+          <ul><%=link_to "#{plan.name}", plan_path(plan) %> -- Average rating: <strong><%= plan.average_rating %></strong></ul>
+          <a href="#" class="load_comments" data-id="<%= plan.id %>">Load Comments</a>
+          <div id="comment-<%= plan.id %>"></div>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+</div>
