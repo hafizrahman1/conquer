@@ -218,7 +218,9 @@ em {
   font-size: 13px;
 }
 
-
+div.actions {
+  text-align: center;
+}
 
 div.links a {
   /*color: #23527c;*/
