@@ -20,6 +20,11 @@ h5{text-align:center;}
       <% @plans_comments.each do |comment| %>
         <h3><li><b><%= comment %></b></li></h3>
       <% end %>
-      <h5><b><a href="/users/addplan/<%=@plan.id%>"><br>Select This Plan</a></b></h5>
+
+      <form method="get" action="/users/addplan/<%=@plan.id%>">
+        <button type="submit" class="btn btn-primary">Select This Plan</button>
+      </form>
+
+      <!-- <h5><b><a href="/users/addplan/<%=@plan.id%>"><br>Select This Plan</a></b></h5> -->
     </div>
   </div>
