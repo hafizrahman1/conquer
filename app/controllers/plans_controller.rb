@@ -14,6 +14,10 @@ class PlansController < ApplicationController
     @average_rating = @plan.average_rating
     @plans_ratings = @plan.ratings
     @plans_comments = @plan.plans_comments
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @plans_comments }
+    end
   end
 
   def index
